@@ -18,9 +18,9 @@ class Circuit():
 
 class Node():
 
-    def __init__(self, nam = ""):
+    def __init__(self, name = ""):
         
-        self.name = nam
+        self.name = name
 
     def getV(self, nam = ""):
         

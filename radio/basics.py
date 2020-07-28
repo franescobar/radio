@@ -8,34 +8,63 @@
 
 class Circuit():
 
-    def __init__(self):
+    def __init__(self, cname):
 
-        self.name = "Circuit Name"
-        self.currentList = []
+        self.name = cname
+        self.VDCList = []
+        self.resistorList = []
+        self.nodeList = []
 
-    def play(self): # No se asuste son nombres temporales
+    def solve(self):
         pass
+
+    def addNode(self):
+
+        n = Node()
+        self.nodeList.append(n)
+        return n
+
+    def addResistor(self, value, n0, n1):
+
+        r = Resistor(value, n0, n1)
+        self.resistorList.append(r)
+        return r
+
+    def addVDC(self, value, np,nm):
+
+        v = VDC(value, np,nm)
+        self.resistorList.append(v)
+        return v
 
 class Node():
 
     def __init__(self, name = ""):
-        
-        self.name = name
+        pass
 
     def getV(self, nam = ""):
         
         print("Tome su pinche tension")
 
-class Source():
-    pass    
+class VDC():
+
+    def __init__(self, value, np,nm):           # Plus node and minus node
+        
+        self.nodePlus = np
+        self.nodeMinus = nm
+        self.value = value
+ 
 
 class Resistor():
 
-    def __init__(self, value):
+    def __init__(self, value, n0, n1):
         
-        node_0 = Node()
-        node_1 = Node()
+        self.nodeA = n0
+        self.nodeB = n1
         self.value = value
+
+    def getV(self):
+        
+        print("Tome su pinche tension")
 
 
 

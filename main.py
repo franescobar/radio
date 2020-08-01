@@ -1,3 +1,6 @@
+#!/usr/bin/env python 
+# -*- coding: utf-8 -*- 
+
 from radio.basics import *
 
 #---- Inicio descripción del circuito
@@ -27,5 +30,10 @@ print("El valor de Va es: " + str(Va.value))
 
 # --------- Solución del circuito
 
+circuito.solve()
 
 # --------- Mostrar resultados
+
+# Specify second circuit just to make sure
+circuito = Circuit('Test circuit')
+

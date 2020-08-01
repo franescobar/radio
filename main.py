@@ -12,21 +12,22 @@ n1 = circuito.addNode()
 n2 = circuito.addNode()
 n3 = circuito.addNode()
 n4 = circuito.addNode()
+n5 = circuito.addNode()
 
-Ra = circuito.addResistor(1, n1, n2)
-Rb = circuito.addResistor(1, n2, GND)
-Rc = circuito.addResistor(1, n2, n4)
-Rd = circuito.addResistor(1, n4, n3)
-Re = circuito.addResistor(1, n3, GND)
+Ra = circuito.addResistor(4, n1, n2)
+Rb = circuito.addResistor(4, n2, n3)
+Rc = circuito.addResistor(8, n3, n5)
+Rd = circuito.addResistor(3, n3, n5)
+Re = circuito.addResistor(12, n5, n4)
+Rf = circuito.addResistor(7, n2, n4)
+Rg = circuito.addResistor(6, n4, GND)
 
-Va = circuito.addVDC(12, n1, GND)
-Vb = circuito.addVDC(5, n4, n3)
+Va = circuito.addVDC(3.3, n1, GND)
+Vb = circuito.addVDC(5, n2, n4)
+Vc = circuito.addVDC(12, n3, n5)
+
 
 # --------- Fin de la descripción del circuito
-
-Ra.getV()
-print("El valor de Ra es: " + str(Ra.value))
-print("El valor de Va es: " + str(Va.value))
 
 # --------- Solución del circuito
 

@@ -14,6 +14,7 @@ class Circuit():
 
         self.name = cname
         self.VDCList = []
+        self.IDCList = []
         self.resistorList = []
         self.nodeList = []
 
@@ -88,6 +89,12 @@ class Circuit():
         self.VDCList.append(v)
         return v
 
+    def addIDC(self, value, np, nm):
+
+        i = IDC(value, np, nm)
+        self.IDCList.append(i)
+        return i
+
 class Node():
 
     def __init__(self, name = ""):
@@ -104,7 +111,16 @@ class VDC():
         self.nodePlus = np
         self.nodeMinus = nm
         self.value = value
+
+class IDC():
+
+    def __init__(self, value, np, nm):           # Plus node and minus node
+        
+        self.nodePlus = np
+        self.nodeMinus = nm
+        self.value = value
  
+
 class Resistor():
 
     def __init__(self, value, n0, n1):
